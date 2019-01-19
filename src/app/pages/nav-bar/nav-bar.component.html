@@ -1,0 +1,43 @@
+<div>
+    <nav class="navbar navbar-inverse" style="background:black">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                    <img class="header-image" src="assets/Q.Refinery-REV.png">
+            </div>
+    
+            <ul class="nav navbar-nav" [hidden]="showMobileNavBar">            
+                <li>
+                    <a routerLink="/home-page" [class.sidebar-active]="currentURL == '/home-page'">
+                        Home
+                    </a>  
+                </li>
+                <li>
+                    <a routerLink="/transactions" [class.sidebar-active]="currentURL == '/transactions'">
+                        Transactions
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/info-page" [class.sidebar-active]="currentURL == '/info-page'">
+                        Documentation
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="bottom-nav" [hidden]="!showMobileNavBar" style="z-index: 10">
+        <a routerLink="/home-page" class="bottom-navaction">
+            <i class="fas fa-home fa-4x bottom-navicon"></i>
+        </a>
+        <a routerLink="/transactions" class="bottom-navaction">
+            <i class="fas fa-credit-card fa-4x bottom-navicon"></i>
+        </a>
+        <a routerLink="/info-page" class="bottom-navaction">
+            <i class="fas fa-link fa-4x bottom-navicon"></i>
+        </a>
+    </div>
+</div>
